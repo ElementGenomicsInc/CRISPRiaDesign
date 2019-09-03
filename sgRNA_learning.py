@@ -719,7 +719,7 @@ def fitParams(paramTable, scoreTable, fitTable):
 			clf = grid_search.GridSearchCV(svr, parameters, n_jobs=16, verbose=0)
 			clf.fit(col_reshape, scoreTable)
 
-			print name, clf.best_params_
+			print clf.best_params_
 			predictedParams.append(pd.Series(clf.predict(col_reshape), index=col.index, name=name))
 			estimators.append(clf.best_estimator_)
 
@@ -798,6 +798,7 @@ def binValues(col, binsize, minEdgePoints=0, edgeOffset = None):
 			rightMoreThan = binCounts.index[j + 1]
 		
 		if i > len(binCounts) + j:
+			print(binCounts, i, j, minEdgePoints, binsize)
 			raise ValueError('min edge requirements cannot be met')
 		
 		if edgeOffset == None: #return strings for bins, fine for grouping, problems for plotting

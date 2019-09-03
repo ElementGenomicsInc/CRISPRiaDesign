@@ -7,14 +7,12 @@ This site hosts the sgRNA machine learning scripts used to generate the Weissman
 To see full example code for de novo machine learning, prediction of sgRNA activity for desired loci, and construction of new genome-scale CRISPRi/a libraries, see the CRISPRiaDesign_example_notebook (included as Jupyter notebook or [web page](CRISPRiaDesign_example_notebook.md)).
 
 ### Dependencies
-* Python v2.7
-* Jupyter notebook
-* Biopython
-* Scipy/Numpy/Pandas
-* Scikit-learn 
-* bxpython (v0.5.0, https://github.com/bxlab/bx-python)
-* Pysam
-* [ScreenProcessing](https://github.com/mhorlbeck/ScreenProcessing)
+
+```
+# added by ian.mcdowell to standardize environment
+# will ultimately be succeeded by Docker image 
+conda create -n CRISPRiaDesign --file requirements.txt
+```
 
 External command line applications required:
 * ViennaRNA
